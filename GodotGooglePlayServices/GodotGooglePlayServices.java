@@ -27,7 +27,7 @@ public class GodotGooglePlayServices extends Godot.SingletonBase {
     private boolean             isBannerReady = false;
     private boolean             isinterstitialReady = false;
     private boolean             isInterstitialShowing = false;
-    private boolean             isDebug = true;
+    private boolean             isDebug;
     private boolean             isTest;
 
     private String              m_app_id;
@@ -235,7 +235,6 @@ public class GodotGooglePlayServices extends Godot.SingletonBase {
         m_activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                isDebug = false;
                 m_app_id = app_id;
                 m_adrequest = get_ads();
                 prepare_banner_ad();
