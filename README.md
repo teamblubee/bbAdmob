@@ -1,5 +1,6 @@
+
 # bbAdmob
-This is a [Google Play Services module](https://developer.android.com/google/play-services/index.html) for the [Godot game engine](https://github.com/okamstudio/godot), written by [blubee](http://blubee.me)
+This is a [Google Play Services module](https://developer.android.com/google/play-services/index.html) for the [Godot game engine](https://github.com/okamstudio/godot), written by [blubee](http://blubee.$
 
 This module should be straigh forward to use.
 
@@ -21,26 +22,54 @@ this is where you'll also need your "ca-app-pub".
 Store that as a string and pass it into the init_admob_ function
 
 
-##Function prototype 
-###init_admob_test(final String app_id, boolean isTop)
+###Function prototype
+####init_admob_test("banner pub id", "interstitial pub id", "isTop")
+####init_admob_interstitial_test("interstitial pub id", "isTop")
+####init_admob_banner_test("banner pub id", "isTop")
+
+Replace _test with _real after you've successfully tested the ads. Do not test with live ads because clicking your own ads **even by accident** can cause you to lose your admob account.
+
+**Also note**
+You should only call one of the init_admob_ functions.
 
 var admob = null
 if(Globals.has_singleton("bbAdmob")):
-	admob = Globals.get_singleton("bbAdmob")
+        admob = Globals.get_singleton("bbAdmob")
 
 You then call admob.init_admob_[**test**|**real**]
 
-once that's done and an ad is successfully loaded you can request to show banner or interstitial ads.
+once that's done and an ad is successfully loaded you can request to show banner or interstitial ads. 
 
-##Function Overview
 
-#####admob.init_admob_test("ca-app-pub","isTop"")
-#####admob.init_admob_real("ca-app-pub","isTop"")
+With the new Admob you can have separate publisher IDs for your banners and your interstitials. 
+Calling the main functions init_admob with your banner publisher id as the first argument and your interstitial publisher id as the second argument isTop is boolean true or false. This will load both ad and once they are ready you can call show/ hide banner or show interstitial.
+
+Remember that you should only call the init function **once**.
+
+##Main Functions Overview
+
+#####admob.init_admob_test("banner pub id", "interstitial pub id", "isTop")
+#####admob.init_admob_real("banner pub id", "interstitial pub id", "isTop")
 ####admob.show_banner()
 ####admob.hide_banner()
 ####admob.show_interstitial()
 
-Be sure to always test your ads with the **init_admob_test** functions, Google will band your admob account if you test with real ads. To be sure check the [admob guidelines](https://support.google.com/admob/answer/2753860?hl=en).
+
+If you for any reason would just like to show either interstitial ads or banner ads then call one of these sets of functions below.
+
+
+
+###Additional Functions
+#####admob.init_admob_interstitial_test("interstitial pub id", "isTop")
+#####init_admob_interstitial_real("interstitial pub id", "isTop")
+#####init_admob_banner_test("banner pub id", "isTop")
+#####init_admob_banner_real("banner pub id", "isTop")
+
+
+Be sure to always test your ads with the **init_admob_test** functions, Google will band your admob account if you test with real ads. To be sure check the [admob guidelines](https://support.google.com/admob/answer/2753860?hl=en)
+
+I've also added added proper lifecycle handling code, that means if your showing a banner ad before your app goes into the background, the banner ad will handle that properly.
+
 
 check the example project for usage.
 
