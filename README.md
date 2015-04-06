@@ -1,7 +1,7 @@
 
 # bbAdmob
 
-[![Godot Google Play Services Admob Video](http://img.youtube.com/vi/ssdkUM_XIsQ/0.jpg)](http://www.youtube.com/watch?v=ssdkUM_XIsQ)
+[![Godot Google Play Services Admob Video](http://img.youtube.com/vi/lpAkgrIvICc/0.jpg)](http://www.youtube.com/watch?v=lpAkgrIvICc)
 
 
 This is a [Google Play Services module](https://developer.android.com/google/play-services/index.html) for the [Godot game engine](https://github.com/okamstudio/godot), written by [blubee](http://blubee.me)
