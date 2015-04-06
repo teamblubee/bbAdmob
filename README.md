@@ -1,6 +1,6 @@
 
 # bbAdmob
-This is a [Google Play Services module](https://developer.android.com/google/play-services/index.html) for the [Godot game engine](https://github.com/okamstudio/godot), written by [blubee](http://blubee.$
+This is a [Google Play Services module](https://developer.android.com/google/play-services/index.html) for the [Godot game engine](https://github.com/okamstudio/godot), written by [blubee](http://blubee.me)
 
 This module should be straigh forward to use.
 
